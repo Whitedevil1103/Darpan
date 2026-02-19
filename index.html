@@ -11,6 +11,7 @@
         :root { --iim-crimson: #a51c30; --iim-gold: #c5a059; }
         .sidebar-link:hover { background-color: rgba(165, 28, 48, 0.1); border-left: 4px solid var(--iim-crimson); }
         .stat-card:hover { transform: translateY(-5px); transition: all 0.3s ease; }
+        /* For a sleek scrollbar in the sidebar */
         .scrollbar-hide::-webkit-scrollbar { display: none; }
         .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
         /* Lightbox Fade Animation */
@@ -19,26 +20,26 @@
 </head>
 <body class="bg-slate-50 font-sans text-slate-900">
 
-    <nav class="bg-white shadow-sm border-b sticky top-0 z-50 px-8 py-0 flex justify-between items-center h-16">
+    <nav class="bg-white shadow-sm border-b sticky top-0 z-50 px-4 md:px-8 py-0 flex justify-between items-center h-16">
         <div class="flex items-center">
             <button onclick="toggleMobileMenu()" class="lg:hidden p-2 mr-2 text-slate-600 hover:bg-slate-100 rounded-lg">
                 <i class="fas fa-bars text-xl"></i>
             </button>
-            <a href="index.html"><div class="flex items-center space-x-4">
-                <img src="SAC.png" alt="IPMSAC Logo" class="h-11 w-auto object-contain">       
-                <div class="h-6 w-[1px] bg-slate-200 mx-1"></div>
-                <h1 class="text-base font-bold tracking-tight text-slate-700">Darpan | The IPM Digital Hub</h1>
+            <a href="index.html"><div class="flex items-center space-x-2 md:space-x-4">
+                <img src="SAC.png" alt="IPMSAC Logo" class="h-10 md:h-20 w-auto object-contain">       
+                <div class="h-6 w-[1px] bg-slate-200 mx-1 hidden sm:block"></div>
+                <h1 class="text-xs md:text-base font-bold tracking-tight text-slate-700">Darpan | The IPM Digital Hub</h1>
             </div></a>
         </div>
-        <div class="flex items-center space-x-6">
+        <div class="flex items-center space-x-2 md:space-x-6">
             <div class="hidden md:flex space-x-4">
                 <button onclick="showSection('home')" class="text-slate-500 hover:text-red-800 text-sm font-semibold px-2">Dashboard</button>
                 <button onclick="showSection('notices')" class="text-slate-500 hover:text-red-800 text-sm font-semibold px-2">Live Notice Board</button>
                 <button onclick="showSection('activities')" class="text-slate-500 hover:text-red-800 text-sm font-semibold px-2">Activities</button>
                 <button onclick="showSection('gallery')" class="text-slate-500 hover:text-red-800 text-sm font-semibold px-2">Gallery</button>
             </div>
-            <button class="bg-slate-900 text-white px-4 py-1.5 rounded-full text-xs font-bold shadow-md hover:bg-red-900 transition-all">
-                <i class="fas fa-user-shield mr-2"></i>Admin Login
+            <button class="bg-slate-900 text-white px-3 md:px-4 py-1.5 rounded-full text-[10px] md:text-xs font-bold shadow-md hover:bg-red-900 transition-all">
+                <i class="fas fa-user-shield md:mr-2"></i><span class="hidden sm:inline">Admin Login</span>
             </button>
         </div>
     </nav>
@@ -78,23 +79,23 @@
             
             <section id="home" class="content-section">
                 <div class="mb-10">
-                    <h2 class="text-3xl font-extrabold text-slate-900">Darpan - Your entry to IPM</h2>
+                    <h2 class="text-2xl md:text-3xl font-extrabold text-slate-900">Darpan - Your entry to IPM</h2>
                     <p class="text-slate-500">Centralized documentation and interface for the IPM Student Body.</p>
                 </div>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 stat-card">
-                        <div class="text-red-800 text-xl mb-2"><i class="fas fa-users"></i></div>
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 stat-card text-center">
+                        <div class="text-red-800 text-xl mb-2"><i class="fas fa-users mx-auto"></i></div>
                         <div class="text-2xl font-black text-slate-800">19</div>
                         <div class="text-xs text-slate-400 font-bold uppercase tracking-wider">Active Entities</div>
                     </div>
-                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 stat-card">
-                        <div class="text-blue-600 text-xl mb-2"><i class="fas fa-calendar-check"></i></div>
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 stat-card text-center">
+                        <div class="text-blue-600 text-xl mb-2"><i class="fas fa-calendar-check mx-auto"></i></div>
                         <div class="text-2xl font-black text-slate-800">100+</div>
                         <div class="text-xs text-slate-400 font-bold uppercase tracking-wider">Annual Events</div>
                     </div>
-                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 stat-card">
-                        <div class="text-emerald-600 text-xl mb-2"><i class="fas fa-file-invoice"></i></div>
+                    <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 stat-card text-center">
+                        <div class="text-emerald-600 text-xl mb-2"><i class="fas fa-file-invoice mx-auto"></i></div>
                         <div class="text-2xl font-black text-slate-800">100%</div>
                         <div class="text-xs text-slate-400 font-bold uppercase tracking-wider">Policy Transparency</div>
                     </div>
@@ -131,7 +132,7 @@
                                 <p class="text-slate-500 text-sm mt-1 leading-relaxed">The centralized portal prototype is now available for internal testing and coordination review.</p>
                             </div>
                         </div>
-                        <div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm flex gap-6">
+                        <div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm flex gap-6 mt-4">
                             <div class="bg-slate-50 p-4 rounded-xl flex flex-col items-center justify-center min-w-[80px]">
                                 <span class="text-xs font-bold uppercase text-slate-400">Feb</span>
                                 <span class="text-2xl font-black">22</span>
@@ -141,7 +142,7 @@
                                 <p class="text-slate-500 text-sm mt-1 leading-relaxed">The official timeline for student council and committee head applications is now live. Ensure institutional memory preservation by adhering to the new handover protocols.</p>
                             </div>
                         </div>
-                        <div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm flex gap-6">
+                        <div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm flex gap-6 mt-4">
                             <div class="bg-slate-50 p-4 rounded-xl flex flex-col items-center justify-center min-w-[80px]">
                                 <span class="text-xs font-bold uppercase text-slate-400">Feb</span>
                                 <span class="text-2xl font-black">25</span>
@@ -151,7 +152,7 @@
                                 <p class="text-slate-500 text-sm mt-1 leading-relaxed">The Academic Committee has integrated past papers and supplementary resources for core Mathematics and Economics courses into the Digital Vault.</p>
                             </div>
                         </div>
-                        <div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm flex gap-6">
+                        <div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm flex gap-6 mt-4">
                             <div class="bg-slate-50 p-4 rounded-xl flex flex-col items-center justify-center min-w-[80px]">
                                 <span class="text-xs font-bold uppercase text-slate-400">Mar</span>
                                 <span class="text-2xl font-black">01</span>
@@ -161,7 +162,7 @@
                                 <p class="text-slate-500 text-sm mt-1 leading-relaxed">A partner organization is offering a 4-week engagement. Strengthening IPM’s brand image through professional corporate collaborations.</p>
                             </div>
                         </div>
-                        <div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm flex gap-6">
+                        <div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm flex gap-6 mt-4">
                             <div class="bg-slate-50 p-4 rounded-xl flex flex-col items-center justify-center min-w-[80px]">
                                 <span class="text-xs font-bold uppercase text-slate-400">Mar</span>
                                 <span class="text-2xl font-black">04</span>
@@ -171,7 +172,7 @@
                                 <p class="text-slate-500 text-sm mt-1 leading-relaxed">Infrastructure Committee has approved a maintenance slot for the hostel lounges this Sunday. Enhancing transparency and campus facility management.</p>
                             </div>
                         </div>
-                        <div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm flex gap-6">
+                        <div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm flex gap-6 mt-4">
                             <div class="bg-slate-50 p-4 rounded-xl flex flex-col items-center justify-center min-w-[80px]">
                                 <span class="text-xs font-bold uppercase text-slate-400">Mar</span>
                                 <span class="text-2xl font-black">08</span>
@@ -196,7 +197,7 @@
                         
                         <div class="flex flex-col items-center text-center group">
                             <div class="w-48 h-48 rounded-full overflow-hidden border-4 border-white shadow-lg transition-transform duration-300 group-hover:scale-105 group-hover:border-red-50 bg-slate-100">
-                                <img src="Atharv.png" alt="Atharv" class="w-full h-full object-cover">
+                                <img src="atharv.png" alt="Atharv" class="w-full h-full object-cover">
                             </div>
                             <h4 class="text-lg font-bold mt-6 text-slate-800">Atharv Ranbhoomi</h4>
                             <p class="text-sm text-slate-500 mt-2 px-4">Central India's largest undergraduate management and cultural fest, showcasing leadership and organizational scale.</p>
@@ -261,7 +262,7 @@
 
         const saccTemplate = (name) => `
             <div class="mb-12">
-                <h2 class="text-5xl font-black text-slate-900 tracking-tight">${name}</h2>
+                <h2 class="text-3xl md:text-5xl font-black text-slate-900 tracking-tight">${name}</h2>
                 <div class="mt-4 flex gap-3">
                     <span class="bg-slate-900 text-white px-3 py-1 rounded-md text-[10px] font-black uppercase tracking-widest">Apex Governance</span>
                 </div>
@@ -288,7 +289,7 @@
 
         const committeeTemplate = (name) => `
             <div class="mb-10 flex flex-col md:flex-row md:items-end justify-between gap-4">
-                <div><h2 class="text-4xl font-black text-slate-900">${name}</h2><p class="text-slate-500 font-medium tracking-wide">Committee</p></div>
+                <div><h2 class="text-3xl md:text-4xl font-black text-slate-900">${name}</h2><p class="text-slate-500 font-medium tracking-wide">Committee</p></div>
                 <div class="flex space-x-2"><button onclick="showSection('gallery')" class="bg-white border px-4 py-2 rounded-xl text-xs font-bold shadow-sm hover:bg-slate-50"><i class="fas fa-camera mr-2"></i>Events Gallery</button></div>
             </div>
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -314,7 +315,7 @@
 
         const clubTemplate = (name) => `
             <div class="mb-10 flex flex-col md:flex-row md:items-end justify-between gap-4">
-                <div><h2 class="text-4xl font-black text-slate-900">${name}</h2><p class="text-slate-500 font-medium tracking-wide">Club</p></div>
+                <div><h2 class="text-3xl md:text-4xl font-black text-slate-900">${name}</h2><p class="text-slate-500 font-medium tracking-wide">Club</p></div>
                 <div class="flex space-x-2"><button onclick="showSection('gallery')" class="bg-white border px-4 py-2 rounded-xl text-xs font-bold shadow-sm hover:bg-slate-50"><i class="fas fa-camera mr-2"></i>Events Gallery</button></div>
             </div>
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -340,7 +341,10 @@
             document.querySelectorAll('.content-section').forEach(s => s.classList.add('hidden'));
             document.getElementById(sectionId).classList.remove('hidden');
             window.scrollTo(0,0);
-            if (window.innerWidth < 1024 && !document.getElementById('sidebar-menu').classList.contains('-translate-x-full')) { toggleMobileMenu(); }
+            // Functionality fix: Close mobile menu if open
+            if (window.innerWidth < 1024 && !document.getElementById('sidebar-menu').classList.contains('-translate-x-full')) { 
+                toggleMobileMenu(); 
+            }
         }
 
         function showEntity(name, type) {
@@ -349,6 +353,13 @@
             else if (type === 'committee') injector.innerHTML = committeeTemplate(name);
             else injector.innerHTML = clubTemplate(name); 
             showSection('entity-page');
+            // Functionality fix: Close mobile menu if open
+            if (window.innerWidth < 1024) { 
+                const sidebar = document.getElementById('sidebar-menu');
+                if (!sidebar.classList.contains('-translate-x-full')) {
+                    toggleMobileMenu();
+                }
+            }
         }
 
         function populateSidebar() {
@@ -381,4 +392,3 @@
     </script>
 </body>
 </html>
-
