@@ -13,31 +13,32 @@
         .stat-card:hover { transform: translateY(-5px); transition: all 0.3s ease; }
         .scrollbar-hide::-webkit-scrollbar { display: none; }
         .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
+        /* Lightbox Fade Animation */
+        .modal-fade { transition: opacity 0.3s ease-in-out; }
     </style>
 </head>
 <body class="bg-slate-50 font-sans text-slate-900">
 
-    <nav class="bg-white shadow-sm border-b sticky top-0 z-50 px-4 md:px-8 py-0 flex justify-between items-center h-16">
+    <nav class="bg-white shadow-sm border-b sticky top-0 z-50 px-8 py-0 flex justify-between items-center h-16">
         <div class="flex items-center">
             <button onclick="toggleMobileMenu()" class="lg:hidden p-2 mr-2 text-slate-600 hover:bg-slate-100 rounded-lg">
                 <i class="fas fa-bars text-xl"></i>
             </button>
-            <div class="flex items-center space-x-2 md:space-x-4">
-                <a href="index.html"><img src="SAC.png" alt="IPMSAC Logo" class="h-8 md:h-11 w-auto object-contain"></a>       
-                <div class="h-6 w-[1px] bg-slate-200 mx-1 hidden sm:block"></div>
-                <h1 class="text-xs md:text-base font-bold tracking-tight text-slate-700 hidden sm:block">Darpan | The IPM Digital Hub</h1>
+            <div class="flex items-center space-x-4">
+                <img src="SAC.png" alt="IPMSAC Logo" class="h-11 w-auto object-contain">       
+                <div class="h-6 w-[1px] bg-slate-200 mx-1"></div>
+                <h1 class="text-base font-bold tracking-tight text-slate-700">Darpan | The IPM Digital Hub</h1>
             </div>
         </div>
-        
-        <div class="flex items-center space-x-2 md:space-x-6">
-            <div class="hidden md:flex space-x-2">
-                <button onclick="showSection('home')" class="text-slate-500 hover:text-red-800 text-xs lg:text-sm font-semibold px-2">Dashboard</button>
-                <button onclick="showSection('notices')" class="text-slate-500 hover:text-red-800 text-xs lg:text-sm font-semibold px-2">Live Notice Board</button>
-                <button onclick="showSection('activities')" class="text-slate-500 hover:text-red-800 text-xs lg:text-sm font-semibold px-2">Activities</button>
-                <button onclick="showSection('gallery')" class="text-slate-500 hover:text-red-800 text-xs lg:text-sm font-semibold px-2">Gallery</button>
+        <div class="flex items-center space-x-6">
+            <div class="hidden md:flex space-x-4">
+                <button onclick="showSection('home')" class="text-slate-500 hover:text-red-800 text-sm font-semibold px-2">Dashboard</button>
+                <button onclick="showSection('notices')" class="text-slate-500 hover:text-red-800 text-sm font-semibold px-2">Live Notice Board</button>
+                <button onclick="showSection('activities')" class="text-slate-500 hover:text-red-800 text-sm font-semibold px-2">Activities</button>
+                <button onclick="showSection('gallery')" class="text-slate-500 hover:text-red-800 text-sm font-semibold px-2">Gallery</button>
             </div>
-            <button class="bg-slate-900 text-white px-3 md:px-4 py-1.5 rounded-full text-[10px] md:text-xs font-bold shadow-md hover:bg-red-900 transition-all">
-                <i class="fas fa-user-shield md:mr-2"></i><span class="hidden sm:inline">Admin Login</span>
+            <button class="bg-slate-900 text-white px-4 py-1.5 rounded-full text-xs font-bold shadow-md hover:bg-red-900 transition-all">
+                <i class="fas fa-user-shield mr-2"></i>Admin Login
             </button>
         </div>
     </nav>
@@ -51,14 +52,12 @@
                     <i class="fas fa-times text-xl"></i>
                 </button>
 
-                <div class="lg:hidden mb-8 mt-4">
+                <div class="lg:hidden mb-8 mt-4 space-y-1">
                     <h3 class="text-[10px] font-black text-slate-400 uppercase tracking-[0.2em] mb-4">Main Menu</h3>
-                    <div class="space-y-1">
-                        <button onclick="showSection('home')" class="w-full text-left px-4 py-2 text-sm font-bold text-slate-600 hover:bg-slate-50 rounded-lg">Dashboard</button>
-                        <button onclick="showSection('notices')" class="w-full text-left px-4 py-2 text-sm font-bold text-slate-600 hover:bg-slate-50 rounded-lg">Live Notice Board</button>
-                        <button onclick="showSection('activities')" class="w-full text-left px-4 py-2 text-sm font-bold text-slate-600 hover:bg-slate-50 rounded-lg">Activities</button>
-                        <button onclick="showSection('gallery')" class="w-full text-left px-4 py-2 text-sm font-bold text-slate-600 hover:bg-slate-50 rounded-lg">Gallery</button>
-                    </div>
+                    <button onclick="showSection('home')" class="w-full text-left px-4 py-2 text-sm font-bold text-slate-600 hover:bg-slate-50 rounded-lg">Dashboard</button>
+                    <button onclick="showSection('notices')" class="w-full text-left px-4 py-2 text-sm font-bold text-slate-600 hover:bg-slate-50 rounded-lg">Notice Board</button>
+                    <button onclick="showSection('activities')" class="w-full text-left px-4 py-2 text-sm font-bold text-slate-600 hover:bg-slate-50 rounded-lg">Activities</button>
+                    <button onclick="showSection('gallery')" class="w-full text-left px-4 py-2 text-sm font-bold text-slate-600 hover:bg-slate-50 rounded-lg">Gallery</button>
                 </div>
 
                 <ul id="sacc-list" class="mb-8 mt-4 lg:mt-0"></ul>
@@ -79,7 +78,7 @@
             
             <section id="home" class="content-section">
                 <div class="mb-10">
-                    <h2 class="text-3xl font-extrabold text-slate-900">Welcome to the IPMSAC Hub</h2>
+                    <h2 class="text-3xl font-extrabold text-slate-900">Darpan - Your entry to IPM</h2>
                     <p class="text-slate-500">Centralized documentation and interface for the IPM Student Body.</p>
                 </div>
 
@@ -120,9 +119,8 @@
             </section>
 
             <section id="notices" class="content-section hidden">
-                <div class="max-w-4xl mx-auto">
-                    <h2 class="text-3xl font-black mb-8">Notice Board</h2>
-                    <div class="space-y-4">
+                <div class="max-w-4xl">
+                    <h2 class="text-3xl font-black mb-6">Notice Board</h2>
                         <div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm flex gap-6">
                             <div class="bg-slate-50 p-4 rounded-xl flex flex-col items-center justify-center min-w-[80px]">
                                 <span class="text-xs font-bold uppercase text-slate-400">Feb</span>
@@ -183,38 +181,29 @@
                                 <p class="text-slate-500 text-sm mt-1 leading-relaxed">The Cultural Committee has finalized dates for the upcoming arts festival. All entity pages must update their "Annual Plan" sections accordingly.</p>
                             </div>
                         </div>
-                    </div>
+
                 </div>
             </section>
 
             <section id="activities" class="content-section hidden">
-                <div class="max-w-4xl mx-auto">
-                    <h2 class="text-3xl font-black mb-4">Activities & Initiatives</h2>
-                    <p class="text-slate-500 mb-10">Centralized platform for comprehensive documentation related to student activities.</p>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div class="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm h-64 flex flex-col items-center justify-center text-center">
-                            <i class="fas fa-palette text-3xl text-red-800 mb-4"></i>
-                            <h4 class="font-bold text-lg mb-2">Cultural Programs</h4>
-                            <p class="text-sm text-slate-400 italic">Objectives, timelines, and outcomes for flagship fests like Atharv.</p>
-                        </div>
-                        <div class="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm h-64 flex flex-col items-center justify-center text-center">
-                            <i class="fas fa-hands-helping text-3xl text-emerald-600 mb-4"></i>
-                            <h4 class="font-bold text-lg mb-2">Social Impact</h4>
-                            <p class="text-sm text-slate-400 italic">Initiatives conducted under IPMSAC for community development.</p>
-                        </div>
-                    </div>
+                <h2 class="text-3xl font-black mb-6">Activities</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div class="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm h-64 flex items-center justify-center text-slate-300 italic">Major Events & Initiatives Documentation</div>
+                    <div class="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm h-64 flex items-center justify-center text-slate-300 italic">Inter-college Collaborations</div>
                 </div>
             </section>
 
             <section id="gallery" class="content-section hidden">
-                <div class="max-w-6xl mx-auto">
-                    <h2 class="text-3xl font-black mb-4">Events Gallery</h2>
-                    <p class="text-slate-500 mb-10">Preserving institutional memory through visual documentation of IPM events.</p>
-                    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                        <div class="aspect-square bg-slate-200 rounded-2xl flex items-center justify-center text-slate-400 text-xs italic font-bold">Flagship Media</div>
-                        <div class="aspect-square bg-slate-200 rounded-2xl flex items-center justify-center text-slate-400 text-xs italic font-bold">Academic Seminar</div>
-                        <div class="aspect-square bg-slate-200 rounded-2xl flex items-center justify-center text-slate-400 text-xs italic font-bold">Sports Tournament</div>
-                        <div class="aspect-square bg-slate-200 rounded-2xl flex items-center justify-center text-slate-400 text-xs italic font-bold">Cultural Night</div>
+                <h2 class="text-3xl font-black mb-6">Events Gallery</h2>
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                    <div class="aspect-square overflow-hidden rounded-2xl border border-slate-200 shadow-sm bg-slate-100 cursor-pointer">
+                        <img src="gallery1.png" alt="Event" onclick="openLightbox(this.src)" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <div class="aspect-square overflow-hidden rounded-2xl border border-slate-200 shadow-sm bg-slate-100 cursor-pointer">
+                        <img src="gallery2.png" alt="Event" onclick="openLightbox(this.src)" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <div class="aspect-square overflow-hidden rounded-2xl border border-slate-200 shadow-sm bg-slate-100 cursor-pointer">
+                        <img src="gallery3.png" alt="Event" onclick="openLightbox(this.src)" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300">
                     </div>
                 </div>
             </section>
@@ -223,6 +212,11 @@
                 <div id="entity-content-injector"></div>
             </section>
         </main>
+    </div>
+
+    <div id="image-modal" onclick="closeLightbox()" class="fixed inset-0 z-[100] bg-slate-900/90 hidden items-center justify-center p-4 md:p-10 cursor-zoom-out modal-fade">
+        <button class="absolute top-6 right-6 text-white text-3xl hover:text-red-400 transition"><i class="fas fa-times"></i></button>
+        <img id="modal-img" src="" class="max-w-full max-h-full rounded-xl shadow-2xl cursor-default" onclick="event.stopPropagation()">
     </div>
 
     <script>
@@ -238,7 +232,7 @@
             </div>
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
                 <div class="lg:col-span-2 space-y-8">
-                    <div class="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm h-64 flex items-center justify-center text-slate-300 italic text-center px-4">Coordinator's Vision for IPMSAC: Centralized Portal, Professional Branding, and Institutional Continuity.</div>
+                    <div class="bg-white p-8 rounded-3xl border border-slate-100 shadow-sm h-64 flex items-center justify-center text-slate-300 italic">Coordinator's Vision & Strategic Goals Placeholder</div>
                 </div>
                 <div class="bg-slate-900 text-white p-8 rounded-3xl shadow-xl">
                     <h4 class="font-bold mb-6 text-slate-400 text-xs uppercase tracking-widest">Office Holder</h4>
@@ -251,72 +245,49 @@
                             <p class="text-slate-400 text-sm">IPM 2024</p>
                         </div>
                     </div>
-                    <div class="text-sm font-medium"><i class="fas fa-envelope mr-3 text-red-400"></i> ipmsacc@iimidr.ac.in</div>
+                    <div class="text-sm font-medium text-white"><i class="fas fa-envelope mr-3 text-red-400"></i> ipmsacc@iimidr.ac.in</div>
                 </div>
             </div>
         `;
 
-        // 2. COMMITTEE TEMPLATE (President & Vice President)
         const committeeTemplate = (name) => `
             <div class="mb-10 flex flex-col md:flex-row md:items-end justify-between gap-4">
-                <div>
-                    <h2 class="text-4xl font-black text-slate-900">${name}</h2>
-                    <p class="text-slate-500 font-medium tracking-wide">Committee</p>
-                </div>
-                <div class="flex space-x-2">
-                    <button class="bg-white border px-4 py-2 rounded-xl text-xs font-bold shadow-sm hover:bg-slate-50"><i class="fas fa-camera mr-2"></i>Events Gallery</button>
-                </div>
+                <div><h2 class="text-4xl font-black text-slate-900">${name}</h2><p class="text-slate-500 font-medium tracking-wide">Committee</p></div>
+                <div class="flex space-x-2"><button onclick="showSection('gallery')" class="bg-white border px-4 py-2 rounded-xl text-xs font-bold shadow-sm hover:bg-slate-50"><i class="fas fa-camera mr-2"></i>Events Gallery</button></div>
             </div>
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
                 <div class="lg:col-span-2 space-y-6">
-                    <div class="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm h-48 flex items-center justify-center text-slate-300 italic px-6 text-center">Activity Calendar: Dates, Timelines, and Documentation related to student activities.</div>
-                    <div class="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm h-48 flex items-center justify-center text-slate-300 italic px-6 text-center">Vision & Annual Roadmap: Dedicated page showcasing vision, annual plans, and team structure.</div>
+                    <div class="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm h-48 flex items-center justify-center text-slate-300 italic">Activity Logs</div>
+                    <div class="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm h-48 flex items-center justify-center text-slate-300 italic">Vision & Roadmap</div>
                 </div>
                 <div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm h-fit">
                     <h4 class="text-xs font-black text-slate-400 uppercase tracking-widest mb-6">Committee Leadership</h4>
                     <div class="space-y-6">
                         <div class="flex items-center space-x-4">
-                            <div class="w-10 h-10 bg-slate-50 rounded-lg border flex items-center justify-center font-black text-slate-800 shadow-sm">P</div>
-                            <div class="flex-1">
-                                <p class="text-sm font-bold text-slate-800">President</p>
-                                <p class="text-xs text-slate-500">Contact Placeholder</p>
-                            </div>
+                            <div class="w-10 h-10 bg-slate-50 rounded-lg border flex items-center justify-center font-black">P</div>
+                            <div class="flex-1"><p class="text-sm font-bold text-slate-800">President</p><p class="text-xs text-slate-500">Contact Placeholder</p></div>
                         </div>
                         <div class="flex items-center space-x-4">
-                            <div class="w-10 h-10 bg-slate-50 rounded-lg border flex items-center justify-center font-black text-slate-400 shadow-sm">VP</div>
-                            <div class="flex-1">
-                                <p class="text-sm font-bold text-slate-800">Vice President</p>
-                                <p class="text-xs text-slate-500">Contact Placeholder</p>
-                            </div>
+                            <div class="w-10 h-10 bg-slate-50 rounded-lg border flex items-center justify-center font-black text-slate-400">VP</div>
+                            <div class="flex-1"><p class="text-sm font-bold text-slate-800">Vice President</p><p class="text-xs text-slate-500">Contact Placeholder</p></div>
                         </div>
                     </div>
                 </div>
             </div>
         `;
 
-        // 3. CLUB TEMPLATE (President ONLY)
         const clubTemplate = (name) => `
             <div class="mb-10 flex flex-col md:flex-row md:items-end justify-between gap-4">
-                <div>
-                    <h2 class="text-4xl font-black text-slate-900">${name}</h2>
-                    <p class="text-slate-500 font-medium tracking-wide">Club</p>
-                </div>
-                <div class="flex space-x-2">
-                    <button class="bg-white border px-4 py-2 rounded-xl text-xs font-bold shadow-sm hover:bg-slate-50"><i class="fas fa-camera mr-2"></i>Events Gallery</button>
-                </div>
+                <div><h2 class="text-4xl font-black text-slate-900">${name}</h2><p class="text-slate-500 font-medium tracking-wide">Club</p></div>
+                <div class="flex space-x-2"><button onclick="showSection('gallery')" class="bg-white border px-4 py-2 rounded-xl text-xs font-bold shadow-sm hover:bg-slate-50"><i class="fas fa-camera mr-2"></i>Events Gallery</button></div>
             </div>
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                <div class="lg:col-span-2 space-y-6">
-                    <div class="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm h-48 flex items-center justify-center text-slate-300 italic px-6 text-center">Club Achievements & Highlights: Historical database of past POR holders and event outcomes.</div>
-                </div>
+                <div class="lg:col-span-2 space-y-6"><div class="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm h-48 flex items-center justify-center text-slate-300 italic">Club Portfolio Placeholder</div></div>
                 <div class="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm h-fit">
-                    <h4 class="text-xs font-black text-slate-400 uppercase tracking-widest mb-6">Club Representative</h4>
+                    <h4 class="text-xs font-black text-slate-400 uppercase tracking-widest mb-6">Club Leadership</h4>
                     <div class="flex items-center space-x-4">
-                        <div class="w-12 h-12 bg-slate-50 rounded-xl border flex items-center justify-center font-black text-slate-800 shadow-sm">P</div>
-                        <div class="flex-1">
-                            <p class="text-sm font-bold text-slate-800">President</p>
-                            <p class="text-xs text-slate-500">Contact Placeholder</p>
-                        </div>
+                        <div class="w-12 h-12 bg-slate-50 rounded-xl border flex items-center justify-center font-black">P</div>
+                        <div class="flex-1"><p class="text-sm font-bold text-slate-800">President</p><p class="text-xs text-slate-500">Contact Placeholder</p></div>
                     </div>
                 </div>
             </div>
@@ -333,12 +304,7 @@
             document.querySelectorAll('.content-section').forEach(s => s.classList.add('hidden'));
             document.getElementById(sectionId).classList.remove('hidden');
             window.scrollTo(0,0);
-            
-            // Close mobile menu if open
-            const sidebar = document.getElementById('sidebar-menu');
-            if (!sidebar.classList.contains('-translate-x-full')) {
-                toggleMobileMenu();
-            }
+            if (window.innerWidth < 1024 && !document.getElementById('sidebar-menu').classList.contains('-translate-x-full')) { toggleMobileMenu(); }
         }
 
         function showEntity(name, type) {
@@ -353,16 +319,26 @@
             const saccList = document.getElementById('sacc-list');
             const commList = document.getElementById('committee-list');
             const clubList = document.getElementById('club-list');
+            saccList.innerHTML = `<li><a href="#" onclick="showEntity('SAC Coordinator', 'sacc')" class="flex items-center px-4 py-3 rounded-xl transition text-red-900 font-black border border-red-100 bg-red-50 hover:bg-red-100"><i class="fas fa-crown mr-3"></i>SAC Coordinator</a></li>`;
+            committees.forEach(item => { commList.innerHTML += `<li><a href="#" onclick="showEntity('${item}', 'committee')" class="sidebar-link block px-4 py-2 rounded-xl transition text-slate-500 hover:text-red-900 font-semibold">${item}</a></li>`; });
+            clubs.forEach(item => { clubList.innerHTML += `<li><a href="#" onclick="showEntity('${item}', 'club')" class="sidebar-link block px-4 py-2 rounded-xl transition text-slate-500 hover:text-red-900 font-semibold">${item}</a></li>`; });
+        }
 
-            saccList.innerHTML = `<li><a href="#" onclick="showEntity('SAC Coordinator', 'sacc')" class="flex items-center px-4 py-3 rounded-xl transition text-red-900 font-black border border-red-100 bg-red-50 hover:bg-red-100 shadow-sm"><i class="fas fa-crown mr-3"></i>SAC Coordinator</a></li>`;
-            
-            committees.forEach(item => {
-                commList.innerHTML += `<li><a href="#" onclick="showEntity('${item}', 'committee')" class="sidebar-link block px-4 py-2 rounded-xl transition text-slate-500 hover:text-red-900 font-semibold">${item}</a></li>`;
-            });
+        // LIGHTBOX LOGIC
+        function openLightbox(src) {
+            const modal = document.getElementById('image-modal');
+            const img = document.getElementById('modal-img');
+            img.src = src;
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            document.body.style.overflow = 'hidden'; // Stop scrolling
+        }
 
-            clubs.forEach(item => {
-                clubList.innerHTML += `<li><a href="#" onclick="showEntity('${item}', 'club')" class="sidebar-link block px-4 py-2 rounded-xl transition text-slate-500 hover:text-red-900 font-semibold">${item}</a></li>`;
-            });
+        function closeLightbox() {
+            const modal = document.getElementById('image-modal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+            document.body.style.overflow = 'auto'; // Restore scrolling
         }
 
         window.onload = populateSidebar;
